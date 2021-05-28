@@ -22,5 +22,10 @@ namespace WPF.NETGenericHost
         {
             services.AddTransient<MainWindow>();
         }
+
+        private void App_OnStartup(object sender, StartupEventArgs e)
+        {
+            _host.Services.GetRequiredService<MainWindow>().Show();
+        }
     }
 }
